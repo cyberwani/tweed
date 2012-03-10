@@ -62,7 +62,7 @@ Sly has a bunch of very useful methods that provide almost any functionality req
 #### Refresh
 
 ```js
-$container.tweed( 'refresh' );
+$ul.tweed( 'refresh' );
 ```
 
 Refreshes the tweets. If there are any new ones, they will be prepended into container, removing the oldest tweets to not overflow over options limit.
@@ -71,7 +71,7 @@ Old tweets will be updated with new relative time.
 #### Pause
 
 ```js
-$container.tweed( 'pause' );
+$ul.tweed( 'pause' );
 ```
 
 Pause refresh interval when in effect. Otherwise it does nothing.
@@ -79,7 +79,7 @@ Pause refresh interval when in effect. Otherwise it does nothing.
 #### Resume
 
 ```js
-$container.tweed( 'resume' );
+$ul.tweed( 'resume' );
 ```
 
 Un-pause refresh interval. When refresh interval is disabled or it is not paused, it has no effect.
@@ -87,9 +87,9 @@ Un-pause refresh interval. When refresh interval is disabled or it is not paused
 #### Destroy
 
 ```js
-$container.tweed( 'destroy' );
+$ul.tweed( 'destroy' );
 // or alias
-$container.tweed( false );
+$ul.tweed( false );
 ```
 
 Destroys the plugin instance, removes attached event listeners, and replaces tweets with whatever content was in the container before the first load.
@@ -104,7 +104,7 @@ All events are triggered on tweets container.
 Event triggered after each load, i.e. after tweets from successful response has been placed into container.
 
 ```js
-$container.on( 'tweed:load', function( event, $tweets, $newTweets, author ){ ... } );
+$ul.on( 'tweed:load', function( event, $tweets, $newTweets, author ){ ... } );
 ```
 
 Arguments passed:
@@ -120,7 +120,7 @@ Arguments passed:
 Event triggered on fetch, i.e. when plugin requests a response from twitter API.
 
 ```js
-$container.on( 'tweed:fetch', function( event ){ ... } );
+$ul.on( 'tweed:fetch', function( event ){ ... } );
 ```
 
 When invalid response has been received, there will be more than one `tweed:fetch` event triggered before plugin will fire `tweed:load` event.
