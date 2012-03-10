@@ -79,7 +79,7 @@
 
 			<div class="note">refreshed every 5 seconds</div>
 
-			<ul class="tweed" data-query="#justinbieber" data-options='{ "limit": 7, "refresh": 5 }'><li class="loading"><h5>LOADING</h5></li></ul>
+			<ul class="tweed" data-query="#justinbieber" data-options='{ "limit": 7, "refreshInterval": 5 }'><li class="loading"><h5>LOADING</h5></li></ul>
 
 		</div>
 
@@ -180,7 +180,7 @@ $ul.on('tweed:load', function( e, $tweets, $newTweets, author ){
 // Tweed call with search query type
 $ul.tweed( "#hashname", {
 	limit: 7,
-	refresh: 5,
+	refreshInterval: 5,
 	template: '&lt;li&gt;...&lt;/li&gt;'
 });
 </pre>
