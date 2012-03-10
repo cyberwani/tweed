@@ -112,7 +112,8 @@ Arguments passed:
 + **$tweets** - jQuery object with all tweets
 + **$newTweets** - jQuery object with only new tweets. if this is the first load event, all tweets are new.
 + **author** - object with tweets author data. this argument is available only in author timeline query (`@JohnDoe`). Object contains this keys:
-`username, name, url, description, website, followers, avatar_url, avatar_mini_url, avatar_bigger_url, avatar, avatar_mini, avatar_bigger, last_tweet, location, tweets, following`
+`username`, `name`, `url`, `description`, `website`, `followers`, `avatar_url`, `avatar_mini_url`, `avatar_bigger_url`, `avatar`, `avatar_mini`,
+`avatar_bigger`, `last_tweet`, `location`, `tweets`, `following`
 
 #### tweed:fetch
 
