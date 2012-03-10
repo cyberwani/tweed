@@ -21,10 +21,15 @@ Type of query that determines what kind of API request will be made. Three types
 ### [options]
 
 **limit:** `default: 5` how many tweets to display
+
 **retweets:** `default: 1` whether to include retweets in author timelines
+
 **linkify:** `default: 1` turns URLs, @author references, and #hashes into links
+
 **refreshInterval:** `default: 0` refresh interval in seconds, leave `0` to never refresh
+
 **pauseOnHover:** `default: 1` when **refreshInterval** is enabled, pause it when mouse hovers over tweets container
+
 **template:**  HTML template using mustache-like tags `{{...}}` that will be replaced with tweet data
 
 Default template is:
