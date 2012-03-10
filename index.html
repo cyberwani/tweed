@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tweed - jQuery plugin</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+<div id="header" class="container header">
+
+	<div id="download">
+		<h6>Download Latest</h6>
+		<div class="btn-group">
+			<a href="//github.com/Darsain/tweed/raw/master/jquery.tweed.js" class="btn btn-large">Development</a>
+			<a href="//github.com/Darsain/tweed/raw/master/jquery.tweed.min.js" class="btn btn-large">Minified</a>
+		</div>
+	</div>
+
+	<h1>Tweed</h1>
+	<p>jQuery plugin for dysplaying a simple feed of recent tweets</p>
+
+</div>
+
+<div id="nav">
+	<div class="container">
+
+		<ul id="tabs" class="clearfix">
+			<li data-activate="examples"><a href="#">Examples</a></li>
+			<li data-activate="code"><a href="#">Code</a></li>
+		</ul>
+
+	</div>
+</div>
+
+<div id="sections" class="container-full">
+
+	<div id="examples" class="clearfix">
+
+		<div class="wrap">
+
+			<div class="controlbar clearfix">
+				<div class="btn-group fright">
+					<button class="btn btn-black" data-action="refresh">Refresh</button>
+				</div>
+				<div class="status"></div>
+				<h3>@DarthVader</h3>
+			</div>
+
+			<ul class="tweed" data-query="@DarthVader" data-options='{ "limit": 6 }'><li class="loading"><h5>LOADING</h5></li></ul>
+
+		</div>
+
+		<div class="wrap">
+
+			<div class="controlbar clearfix">
+				<div class="btn-group fright">
+					<button class="btn btn-black" data-action="refresh">Refresh</button>
+				</div>
+				<div class="status"></div>
+				<h3>@twitter/team</h3>
+			</div>
+
+			<ul class="tweed" data-query="@twitter/team" data-options='{ "limit": 7, "linkify": 0 }'><li class="loading"><h5>LOADING</h5></li></ul>
+
+		</div>
+
+		<div class="wrap">
+
+			<div class="controlbar clearfix">
+				<div class="btn-group fright">
+					<button class="btn btn-black" data-action="pause">Pause</button>
+					<button class="btn btn-black" data-action="resume">Resume</button>
+					<button class="btn btn-black" data-action="refresh">Refresh</button>
+				</div>
+				<div class="status"></div>
+				<h3>#justinbieber</h3>
+			</div>
+
+			<div class="note">refreshed every 5 seconds</div>
+
+			<ul class="tweed" data-query="#justinbieber" data-options='{ "limit": 7, "refresh": 5 }'><li class="loading"><h5>LOADING</h5></li></ul>
+
+		</div>
+
+	</div>
+
+
+	<div id="code" class="clearfix">
+
+		<div class="wrap">
+
+			<div class="controlbar clearfix">
+				<h3>Author timeline query type</h3>
+			</div>
+
+<pre class="prettyprint lang-js">
+// On fetch
+$ul.on('tweed:fetch', function(){
+
+	// display loader
+
+});
+
+// On load
+$ul.on('tweed:load', function( e, $tweets, $newTweets, author ){
+
+	// hide loader
+	// display new tweets info
+	// display author data
+
+});
+
+// Tweed call with author query type
+$ul.tweed( "@username", {
+	limit: 6,
+	retweets: 0,
+	template: '&lt;li&gt;...&lt;/li&gt;'
+});
+</pre>
+
+		</div>
+
+		<div class="wrap">
+
+			<div class="controlbar clearfix">
+				<h3>Author list query type</h3>
+			</div>
+
+<pre class="prettyprint lang-js">
+// On fetch
+$ul.on('tweed:fetch', function(){
+
+	// display loader
+
+});
+
+// On load
+$ul.on('tweed:load', function( e, $tweets, $newTweets, author ){
+
+	// hide loader
+	// display new tweets info
+	// display author data
+
+});
+
+// Tweed call with list query type
+$ul.tweed( "@username/listname", {
+	limit: 7,
+	linkify: 0,
+	template: '&lt;li&gt;...&lt;/li&gt;'
+});
+</pre>
+
+		</div>
+
+		<div class="wrap">
+
+			<div class="controlbar clearfix">
+				<h3>Search query type</h3>
+			</div>
+
+<pre class="prettyprint lang-js">
+// On fetch
+$ul.on('tweed:fetch', function(){
+
+	// display loader
+
+});
+
+// On load
+$ul.on('tweed:load', function( e, $tweets, $newTweets, author ){
+
+	// hide loader
+	// display new tweets info
+	// display author data
+
+});
+
+// Tweed call with search query type
+$ul.tweed( "#hashname", {
+	limit: 7,
+	refresh: 5,
+	template: '&lt;li&gt;...&lt;/li&gt;'
+});
+</pre>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div id="footer">
+	<div class="container">
+		<span class="fright"><a href="#top">Back to top &uarr;</a></span>
+		<p>Licensed under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.</p>
+	</div>
+</div>
+
+<a href="http://github.com/Darsain/tweed"><img style="position:absolute;top:0;left:0;border:0;" src="https://a248.e.akamai.net/assets.github.com/img/bec6c51521dcc8148146135149fe06a9cc737577/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+
+<script type="text/javascript">window.log=function(){log.history=log.history||[];log.history.push(arguments);if(this.console){console.log(Array.prototype.slice.call(arguments))}};</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+<script type="text/javascript" src="js/libs/prettify.js"></script>
+<script type="text/javascript" src="jquery.tweed.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+
+</body>
+</html>
