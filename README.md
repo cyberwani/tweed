@@ -10,7 +10,7 @@ jQuery plugin for dysplaying a simple feed of recent tweets.
 ```js
 $ul.tweed( query [, options ] );
 ```
-### `query`
+### query
 
 Type of query that determines what kind of API request will be made. Three types of queries are supported:
 
@@ -18,7 +18,7 @@ Type of query that determines what kind of API request will be made. Three types
 + `@JohnDoe/coolpeople` - this creates a list API request for `coolpeople` list name that belongs to `@JohnDoe` twitter account
 + `#justinbieber` - anything else than upper 2 cases creates a search API request. in this case: recent tweets containing `#justinbieber` hash tag
 
-### `[options]`
+### [options]
 
 **limit:** `default: 5` how many tweets to display
 **retweets:** `default: 1` whether to include retweets in author timelines
