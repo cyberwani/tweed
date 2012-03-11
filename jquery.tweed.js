@@ -442,4 +442,4 @@ $.fn[pluginName].defaults = {
 	// (also all keys from a JSON response are available)
 };
 
-})(jQuery);
+}(jQuery));
