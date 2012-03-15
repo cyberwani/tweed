@@ -16,7 +16,8 @@ Type of query that determines what kind of API request will be made. Three types
 
 + `@JohnDoe` - author name prefixed with `@` creates a user timeline API request. in this case: recent tweets from `@JohnDoe` account
 + `@JohnDoe/coolpeople` - this creates a list API request for `coolpeople` list name that belongs to `@JohnDoe` twitter account
-+ `#justinbieber` - anything else than upper 2 cases creates a search API request. in this case: recent tweets containing `#justinbieber` hash tag
++ `#justinbieber` - anything else than upper 2 cases creates a search API request. in this case: recent tweets containing `#justinbieber` hash tag will be dispolayed,
+but you can use any Search Operator from [Twitter Search API](https://dev.twitter.com/docs/using-search)
 
 ### [options]
 
