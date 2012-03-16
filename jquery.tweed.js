@@ -282,7 +282,7 @@ function Plugin( container, q, o ){
 	/**
 	 * Parse twitter time string
 	 *
-	 * stolen from seaofclouds/tweet plugin (I wasn't happy with it, that's why I'm writing this one)
+	 * stolen from seaofclouds/tweet plugin
 	 *
 	 * @private
 	 *

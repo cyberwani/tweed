@@ -145,5 +145,14 @@ $ul.tweed( '@JohnDoe', {
 + When twitter API returns some error, or anything other than valid response, it is considered that twitter is temporarily unresponsive/overloaded.
 In this case `tweed` will be sending request 1 second after every bad response until it receives something valid.
 
-+ Twitter API responses are sometimes really weird, especially for search type query. Sometimes it returnes different number of tweets than requested, sometimes it returns the same request
-as a few seconds ago, but 3rd tweet is missing, ... weird ...
++ Tweed will replace anything inside a container, so if you want to have a simple "tweets loading" message, just place it inside of a container, and Tweed will
+than replace it with loaded tweets.
+
++ Twitter API responses are sometimes really weird, especially for search type query. Sometimes it returns different number of tweets than requested, sometimes it returns the same request
+as a few seconds ago, but 3rd tweet is missing, ... just weird ...
+
+
+## Credits
+
+Tweed was created after I've tried using [seaofclouds/tweet](https://github.com/seaofclouds/tweet) plugin, but found it to do a lot of redundant stuff in a non-simple way,
+yet didn't gave me a lot of power over it's output. Nevertheless, I've used its function for parsing twitter date, so thx :)
