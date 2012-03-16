@@ -1,6 +1,6 @@
 # Tweed
 
-jQuery plugin for dysplaying a simple feed of recent tweets.
+jQuery plugin for displaying a simple feed of recent tweets.
 
 [See the DEMO](http://darsain.github.com/tweed)
 
