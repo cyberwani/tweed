@@ -437,7 +437,7 @@ $.fn[pluginName].defaults = {
 	limit:           5,     // how many tweets to display
 	retweets:        true,  // include retweets in timelines
 	replies:         false, // include replies in timelines
-	amend:           10,     // how many additional tweets to request when disabling retweets or replies (read more on this in docs)
+	amend:           10,    // how many additional tweets to request when disabling retweets or replies (read more on this in docs)
 	linkify:         true,  // linkify URL, @author, and #hash strings in tweets ('@author' => '<a href="http://twitter.com/author">@author</a>')
 	refreshInterval: 0,     // refresh interval in seconds, leave 0 to disable
 	pauseOnHover:    0,     // when refreshing is enabled, pause it when mouse hovers over tweets container
