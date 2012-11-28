@@ -106,6 +106,8 @@ function Plugin( container, q, o ){
 
 		if( !tweets.length ) return;
 
+		tweets = tweets.slice(0, o.limit);
+
 		var oldItems = [],
 			newItems = [],
 			author, firstItemDate;
@@ -225,7 +227,7 @@ function Plugin( container, q, o ){
 
 		}).fail(function(){
 
-			// If we got an error response, refetch in 2 second
+			// If we got an error response, refetch in 2 seconds
 			// as twitter servers are probably overloaded
 			tIndex = setTimeout( fetch, 2000 );
 
@@ -369,7 +371,7 @@ function Plugin( container, q, o ){
 					request = {
 						include_rts: o.retweets,
 						screen_name: query.author,
-						count: o.limit,
+						count: o.limit + ((!o.retweets || !o.replies) ? o.amend : 0 ),
 						exclude_replies: !o.replies
 					};
 			break;
@@ -432,16 +434,17 @@ $.fn[pluginName] = function( query, options ){
 
 // Default options
 $.fn[pluginName].defaults = {
-	limit:           5,   // how many tweets to display
-	retweets:        1,   // include retweets in timelines
-	replies:         0,   // include replies in timelines
-	linkify:         1,   // linkify URL, @author, and #hash strings in tweets ('@author' => '<a href="http://twitter.com/author">@author</a>')
-	refreshInterval: 0,   // refresh interval in seconds, leave 0 to disable
-	pauseOnHover:    0,   // when refreshing is enabled, pause it when mouse hovers over tweets container
+	limit:           5,     // how many tweets to display
+	retweets:        true,  // include retweets in timelines
+	replies:         false, // include replies in timelines
+	amend:           10,     // how many additional tweets to request when disabling retweets or replies (read more on this in docs)
+	linkify:         true,  // linkify URL, @author, and #hash strings in tweets ('@author' => '<a href="http://twitter.com/author">@author</a>')
+	refreshInterval: 0,     // refresh interval in seconds, leave 0 to disable
+	pauseOnHover:    0,     // when refreshing is enabled, pause it when mouse hovers over tweets container
 	template: '<li><span class="text">{{tweet}}</span><br><a href="{{author_url}}" class="author">{{author}}</a> <a href="{{tweet_url}}" class="time">{{time}}</a></li>'
 	// HTML template with mustache-like tags {{...}} that will be replaced with tweet data
 	// available keys: author, name, author_url, tweet, tweet_url, time, followers, avatar_url, avatar, avatar_mini, avatar_bigger
-	// (also all keys from a JSON response are available)
+	// (also all keys from a response object are available)
 };
 
 }(jQuery));
