@@ -369,7 +369,8 @@ function Plugin( container, q, o ){
 					request = {
 						include_rts: o.retweets,
 						screen_name: query.author,
-						count: o.limit
+						count: o.limit,
+						exclude_replies: !o.replies
 					};
 			break;
 
@@ -433,6 +434,7 @@ $.fn[pluginName] = function( query, options ){
 $.fn[pluginName].defaults = {
 	limit:           5,   // how many tweets to display
 	retweets:        1,   // include retweets in timelines
+	replies:         0,   // include replies in timelines
 	linkify:         1,   // linkify URL, @author, and #hash strings in tweets ('@author' => '<a href="http://twitter.com/author">@author</a>')
 	refreshInterval: 0,   // refresh interval in seconds, leave 0 to disable
 	pauseOnHover:    0,   // when refreshing is enabled, pause it when mouse hovers over tweets container
