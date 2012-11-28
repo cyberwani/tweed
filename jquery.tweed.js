@@ -1,5 +1,5 @@
 /*!
- * jQuery Tweed v1.0.0
+ * jQuery Tweed v1.1.0
  * https://github.com/Darsain/tweed
  *
  * Licensed under the MIT license.
