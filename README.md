@@ -14,29 +14,41 @@ $ul.tweed( query [, options ] );
 
 Type of query that determines what kind of API request will be made. Three types of queries are supported:
 
-+ `@JohnDoe` - author name prefixed with `@` creates a user timeline API request. in this case: recent tweets from `@JohnDoe` account
-+ `@JohnDoe/coolpeople` - this creates a list API request for `coolpeople` list name that belongs to `@JohnDoe` twitter account
-+ `#justinbieber` - anything else than upper 2 cases creates a search API request. in this case: recent tweets containing `#justinbieber` hash tag will be displayed,
-but you can use any Search Operator from [Twitter Search API](https://dev.twitter.com/docs/using-search)
++ `@JohnDoe` - Author name prefixed with `@` creates a user timeline API request. In this case: recent tweets from `@JohnDoe` account.
++ `@JohnDoe/coolpeople` - This creates a list API request for `coolpeople` list name that belongs to `@JohnDoe` twitter account.
++ `#justinbieber` - Anything else than upper 2 cases creates a search API request. In this case: recent tweets containing `#justinbieber` hash tag will be displayed,
+but you can use any Search Operator from [Twitter Search API](https://dev.twitter.com/docs/using-search).
 
 ### [options]
 
 **limit:** `default: 5` how many tweets to display
 
-**retweets:** `default: 1` whether to include retweets in author timelines
+**retweets:** `default: 1` Whether to include retweets in author timelines.
 
-**linkify:** `default: 1` turns URLs, @author references, and #hashes into links
+**replies:** `default: 0` Whether to include replies in author timelines.
 
-**refreshInterval:** `default: 0` refresh interval in seconds, leave `0` to never refresh
+**amend:** `default: 10` How many additional tweets to request when `replies` or `retweets` options are disabled.
+This is because when you'll request 10 tweets without replies, and 2 of the latest tweets are replies, you'll get
+a response array with 8 tweets. Yes, this is retarded. Amend options is however just trying to ease the problem.
+If `replies` or `retweets` are disabled, `limit = 5`, `amend = 10`, and the last 15 tweets on an account are replies
+or retweets, response object will return 0 tweets...
 
-**pauseOnHover:** `default: 1` when **refreshInterval** is enabled, pause it when mouse hovers over tweets container
+**linkify:** `default: 1` Turns URLs, @author references, and #hashes into links.
 
-**template:**  HTML template using mustache-like tags `{{...}}` that will be replaced with tweet data
+**refreshInterval:** `default: 0` Refresh interval in seconds, leave `0` to never refresh.
+
+**pauseOnHover:** `default: 1` When **refreshInterval** is enabled, pause it when mouse hovers over tweets container.
+
+**template:**  HTML template using mustache-like tags `{{...}}` that will be replaced with tweet data.
 
 Default template is:
 
 ```html
-<li><span class="text">{{tweet}}</span><br><a href="{{author_url}}" class="author">{{author}}</a> <a href="{{tweet_url}}" class="time">{{time}}</a></li>
+<li>
+	<span class="text">{{tweet}}</span><br>
+	<a href="{{author_url}}" class="author">{{author}}</a>
+	<a href="{{tweet_url}}" class="time">{{time}}</a>
+</li>
 ```
 
 Available template data keys:
@@ -58,7 +70,7 @@ Available template data keys:
 
 ## Methods
 
-Sly has a bunch of very useful methods that provide almost any functionality required.
+Tweed has a few useful methods available.
 
 #### Refresh
 
@@ -75,7 +87,7 @@ Old tweets will be updated with new relative time.
 $ul.tweed( 'pause' );
 ```
 
-Pause refresh interval when in effect. Otherwise it does nothing.
+Pause refresh interval when enabled. Otherwise it does nothing.
 
 #### Resume
 
